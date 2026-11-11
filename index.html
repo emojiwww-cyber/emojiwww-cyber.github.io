@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xiaotian Chen — Robotics Engineer</title>
+<meta name="description" content="Xiaotian Chen (陈晓天) — robotics engineer. M.S. EE at Columbia. Motion control, ROS 2 navigation, PX4 UAVs, Wi-Fi sensing. Open to Summer 2027 internships.">
+<meta property="og:title" content="Xiaotian Chen — Robotics Engineer">
+<meta property="og:description" content="Xiaotian Chen (陈晓天) — robotics engineer. M.S. EE at Columbia. Motion control, ROS 2 navigation, PX4 UAVs, Wi-Fi sensing. Open to Summer 2027 internships.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/portrait.jpg">
+<meta name="theme-color" content="#0B0F14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230B0F14'/%3E%3Cg fill='none' stroke='%23FF6A3D' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='6' cy='17' r='2'/%3E%3Ccircle cx='12' cy='10' r='2'/%3E%3Ccircle cx='18' cy='5' r='2'/%3E%3Cpath d='M7.3 15.5L10.7 11.5M13.6 8.8L16.6 6.2'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#0B0F14}
+html{scroll-behavior:smooth}
+a{color:#FF8A63;text-decoration:none}a:hover{color:#FFB199;text-decoration:underline}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+a:focus-visible,button:focus-visible{outline:2px solid #FF6A3D;outline-offset:3px}
+.xc-btn{transition:background-color 160ms ease,border-color 160ms ease,transform 120ms ease}
+.xc-btn:hover{text-decoration:none;transform:translateY(-1px)}
+.xc-btn:active{transform:translateY(0)}
+.xc-demo{transition:background-color 160ms ease,color 160ms ease}
+.xc-resume-item{transition:background-color 140ms ease}
+.xc-resume-item:hover{background:#1A212B;text-decoration:none}
+.xc-demo:hover{background:#FF8A63 !important}
+.xc-card{transition:border-color 200ms ease,box-shadow 200ms ease}
+.xc-card:hover{border-color:#FF6A3D;box-shadow:0 0 0 4px rgba(255,106,61,0.08)}
+.xc-reg{background:linear-gradient(#FF6A3D,#FF6A3D) top left/14px 2px no-repeat,linear-gradient(#FF6A3D,#FF6A3D) top left/2px 14px no-repeat,linear-gradient(#FF6A3D,#FF6A3D) top right/14px 2px no-repeat,linear-gradient(#FF6A3D,#FF6A3D) top right/2px 14px no-repeat,linear-gradient(#FF6A3D,#FF6A3D) bottom left/14px 2px no-repeat,linear-gradient(#FF6A3D,#FF6A3D) bottom left/2px 14px no-repeat,linear-gradient(#FF6A3D,#FF6A3D) bottom right/14px 2px no-repeat,linear-gradient(#FF6A3D,#FF6A3D) bottom right/2px 14px no-repeat}
+.xc-trace{stroke-dasharray:1400;stroke-dashoffset:1400;animation:xcdraw 3.2s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes xcdraw{to{stroke-dashoffset:0}}
+@keyframes xcblink{50%{opacity:.25}}
+.xc-live{animation:xcblink 1.6s steps(2,start) infinite}
+.xc-s{animation:xcs 3s ease-in-out infinite alternate}
+@keyframes xcs{from{transform:rotate(-3.2deg)}to{transform:rotate(3.2deg)}}
+.xc-pulley{animation:xcspin 3s ease-in-out infinite alternate}
+@keyframes xcspin{from{transform:rotate(-60deg)}to{transform:rotate(60deg)}}
+@keyframes xcscan{from{transform:translateY(0)}to{transform:translateY(100%)}}
+.xc-scan{animation:xcscan 3.6s linear infinite alternate}
+@keyframes xcfade{from{opacity:0}to{opacity:1}}
+@keyframes xcpop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.xc-overlay{animation:xcfade 180ms ease-out}
+.xc-dialog{animation:xcpop 240ms cubic-bezier(.2,.8,.2,1)}
+.xc-arm1{animation:xcarm1 4.2s ease-in-out infinite alternate}
+@keyframes xcarm1{from{transform:rotate(-8deg)}to{transform:rotate(16deg)}}
+.xc-arm2{animation:xcarm2 4.2s ease-in-out infinite alternate}
+@keyframes xcarm2{from{transform:rotate(18deg)}to{transform:rotate(-22deg)}}
+.xc-grip{animation:xcgrip 2.1s ease-in-out infinite alternate}
+@keyframes xcgrip{from{transform:rotate(0deg)}to{transform:rotate(14deg)}}
+.xc-bob{animation:xcbob 2.8s ease-in-out infinite alternate}
+@keyframes xcbob{from{transform:translateY(-6px)}to{transform:translateY(6px)}}
+.xc-rotor{transform-box:fill-box;transform-origin:center;animation:xcrotor .18s linear infinite alternate}
+@keyframes xcrotor{from{transform:scaleX(1)}to{transform:scaleX(.25)}}
+.xc-rove{position:absolute;bottom:6px;animation:xcrove 16s linear infinite}
+@keyframes xcrove{from{left:-140px}to{left:100%}}
+.xc-wheel{animation:xcspin2 1s linear infinite}
+@keyframes xcspin2{to{transform:rotate(360deg)}}
+.xc-pkt{opacity:.95}
+.xc-ripple{transform-box:fill-box;transform-origin:center;animation:xcripple 2.4s ease-out infinite}
+@keyframes xcripple{from{transform:scale(.2);opacity:.9}to{transform:scale(1);opacity:0}}
+.xc-act{opacity:0;animation:xcact 12s linear infinite}
+@keyframes xcact{0%,19%{opacity:1}20%,100%{opacity:0}}
+.xc-wave{animation:xcwave 2.4s linear infinite}
+@keyframes xcwave{from{transform:translateX(0)}to{transform:translateX(-120px)}}
+@media (prefers-reduced-motion: reduce){
+html{scroll-behavior:auto}
+.xc-trace{animation:none;stroke-dashoffset:0}
+.xc-live,.xc-reveal,.xc-s,.xc-pulley,.xc-scan,.xc-overlay,.xc-dialog,.xc-arm1,.xc-arm2,.xc-grip,.xc-bob,.xc-rotor,.xc-rove,.xc-wheel,.xc-ripple,.xc-wave{animation:none}
+.xc-act{animation:none;opacity:0}.xc-act0{opacity:1}
+.xc-motion{display:none}
+}
+</style>
+</head>
+<body>
+<noscript><p style="color:#E9EBEE;font-family:sans-serif;padding:24px">Xiaotian Chen — Robotics Engineer. Please enable JavaScript to view this page, or email xc2907@columbia.edu.</p></noscript>
+<div id="app"></div>
+<template id="page-template">
+<div lang="{{htmlLang}}" style="font-family: Geist, 'Noto Sans SC', system-ui, sans-serif; color: #E9EBEE; background-color: #0B0F14; background-image: linear-gradient(#151C25 1px, transparent 1px), linear-gradient(90deg, #151C25 1px, transparent 1px); background-size: 40px 40px; min-height: 100vh">
+
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(11,15,20,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #1E2631; color: #E9EBEE">
+<div style="border-bottom: 1px solid #1A212B">
+<div style="max-width: 1200px; margin: 0 auto; padding: 6px 24px; display: flex; flex-wrap: wrap; gap: 4px 24px; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 11px; letter-spacing: 0.06em; color: #8D96A3">
+<span><span class="xc-live" style="color: #3DDC97">●</span> NODE /xc_portfolio · ONLINE</span>
+<span>ROS_DISTRO=jazzy</span>
+<span>40.8075°N 73.9626°W</span>
+<span style="color: #FF8A63">{{t.status}}</span>
+</div>
+</div>
+<nav aria-label="Main" style="max-width: 1200px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: center; justify-content: space-between">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; min-height: 44px; color: #F3F2EE">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6A3D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="18" r="2"></circle><circle cx="12" cy="10" r="2"></circle><circle cx="19" cy="5" r="2"></circle><path d="M6.4 16.6L10.6 11.4M13.8 9.1L17.2 6"></path></svg>
+<span style="font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Xiaotian Chen</span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #8D96A3">陈晓天</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px; font-size: 14px">
+<a href="#experience" style="color: #C9CED6">{{t.navExp}}</a>
+<a href="#work" style="color: #C9CED6">{{t.navWork}}</a>
+<a href="#skills" style="color: #C9CED6">{{t.navSkills}}</a>
+<a href="#contact" style="color: #C9CED6">{{t.navContact}}</a>
+<button type="button" onClick="{{toggleLang}}" aria-label="{{t.langAria}}" class="xc-btn" style="min-height: 44px; min-width: 64px; padding: 0 16px; border-radius: 999px; border: 1px solid #FF6A3D; background: transparent; color: #FF8A63; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 13px; font-weight: 500; cursor: pointer">{{t.langLabel}}</button>
+</div>
+</nav>
+</header>
+
+<section id="top" style="color: #E9EBEE; overflow: hidden; border-bottom: 1px solid #1E2631">
+<div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: center">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; letter-spacing: 0.08em">
+<span style="padding: 4px 12px; border-radius: 999px; border: 1px solid #2A3340; color: #C9CED6">{{t.eyebrow}}</span>
+<span style="padding: 4px 12px; border-radius: 999px; border: 1px solid #2A3340; color: #C9CED6">{{t.eyebrow2}}</span>
+</div>
+<h1 style="margin: 0; font-size: 64px; line-height: 1.04; font-weight: 600; letter-spacing: -0.03em; max-width: 760px; color: #F3F2EE">{{t.h1a}}<span style="color: {{accentOnDark}}">{{t.h1b}}</span></h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #B7BDC6; max-width: 620px">{{t.abstract}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+<button type="button" onClick="{{openEmail}}" class="xc-btn" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #FF6A3D; background: #FF6A3D; color: #0B0F14; font-family: inherit; font-weight: 600; font-size: 15px; cursor: pointer">{{t.ctaEmail}}
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+<div style="position: relative; display: inline-flex">
+<button type="button" onClick="{{toggleResume}}" aria-expanded="{{resumeExpanded}}" aria-controls="xc-resume-menu" class="xc-btn" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #3A4452; background: transparent; color: #F3F2EE; font-family: inherit; font-weight: 600; font-size: 15px; cursor: pointer">{{t.ctaResume}}
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button>
+<sc-if value="{{resumeOpen}}" hint-placeholder-val="{{ false }}">
+<div id="xc-resume-menu" class="xc-dialog" style="position: absolute; top: calc(100% + 8px); left: 0; z-index: 20; width: 300px; display: flex; flex-direction: column; gap: 4px; padding: 8px; border-radius: 12px; border: 1px solid #2A3340; background: #10151C; box-shadow: 0 16px 40px rgba(0,0,0,0.45)">
+<span style="padding: 8px 12px 4px; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8D96A3">{{t.resumeMenuTitle}}</span>
+<sc-for list="{{resumes}}" as="r" hint-placeholder-count="2">
+<a href="{{r.url}}" download="{{r.file}}" target="_blank" rel="noopener" onClick="{{closeResume}}" class="xc-resume-item" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 8px 12px; border-radius: 8px; color: #F3F2EE">
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">{{r.label}}</span><span style="font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 11px; color: #8D96A3">{{r.meta}}</span></span>
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A63" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+<a href="https://github.com/emojiwww-cyber" class="xc-btn" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #3A4452; color: #F3F2EE; font-weight: 600; font-size: 15px">GitHub</a>
+<a href="https://www.linkedin.com/in/xiaotian-chen-21b137429" class="xc-btn" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #3A4452; color: #F3F2EE; font-weight: 600; font-size: 15px">LinkedIn</a>
+</div>
+</div>
+<figure style="flex: 1 1 300px; max-width: 380px; margin: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; padding: 8px; border-radius: 16px; background: #10151C; border: 1px solid #2A3340">
+<div style="position: relative; border-radius: 8px; overflow: hidden">
+<img src="assets/portrait.jpg" alt="{{t.photoAlt}}" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%">
+</div>
+</div>
+<figcaption style="font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; line-height: 1.5; color: #8D96A3">{{t.fig0cap}}</figcaption>
+</figure>
+</div>
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px">
+<sc-for list="{{edu}}" as="e" hint-placeholder-count="2">
+<div style="display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; justify-content: space-between; padding: 16px 20px; border-radius: 12px; border: 1px solid #2A3340; background: rgba(16,21,28,0.85)">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 16px; font-weight: 600; color: #F3F2EE">{{e.school}}</span>
+<span style="font-size: 14px; color: #B7BDC6">{{e.degree}}</span>
+<span style="font-size: 12px; color: #8D96A3">{{e.note}}</span>
+</div>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #8D96A3">{{e.date}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="experience" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 32px; display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 96px">
+<div class="xc-reveal" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; letter-spacing: 0.08em; color: #FF8A63">§1 · /xc/internship</span>
+<h2 style="margin: 0; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.025em">{{t.expTitle}}</h2>
+</div>
+<svg aria-hidden="true" viewBox="0 0 230 170" width="230" height="170" style="flex: 0 0 auto; overflow: visible">
+<line x1="0" y1="160" x2="230" y2="160" stroke="#2A3340" stroke-width="1" stroke-dasharray="3 6"></line>
+<rect x="22" y="146" width="76" height="14" rx="3" fill="#161C25" stroke="#3A4452"></rect>
+<rect x="44" y="122" width="32" height="24" rx="5" fill="#161C25" stroke="#3A4452"></rect>
+<g transform="translate(60,122)">
+<g class="xc-arm1">
+<rect x="-8" y="-66" width="16" height="66" rx="8" fill="#161C25" stroke="#3A4452"></rect>
+<circle cx="0" cy="0" r="10" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><circle cx="0" cy="0" r="3" fill="#FF6A3D"></circle>
+<g transform="translate(0,-66)">
+<g class="xc-arm2">
+<rect x="0" y="-7" width="84" height="14" rx="7" fill="#161C25" stroke="#3A4452"></rect>
+<circle cx="0" cy="0" r="9" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><circle cx="0" cy="0" r="3" fill="#FF6A3D"></circle>
+<g transform="translate(84,0)">
+<circle cx="0" cy="0" r="6" fill="#0B0F14" stroke="#7E9BFF" stroke-width="2"></circle>
+<g class="xc-grip"><path d="M4 -3 L16 -12 L28 -12" fill="none" stroke="#7E9BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<g style="transform: scaleY(-1)"><g class="xc-grip"><path d="M4 -3 L16 -12 L28 -12" fill="none" stroke="#7E9BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></g></g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</div>
+<article class="xc-reveal xc-card xc-reg" style="display: flex; flex-wrap: wrap; gap: 24px 48px; padding: 32px; border-radius: 4px; background-color: #10151C; border: 1px solid #2A3340">
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Geist Mono', monospace; font-size: 13px; color: #8D96A3">06/2026 — 08/2026</span>
+<span style="font-size: 16px; font-weight: 600">{{t.expCompany}}</span>
+<span style="font-size: 14px; color: #8D96A3">{{t.expDept}}</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding-top: 8px">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25"><span style="font-family: 'Geist Mono', monospace; font-size: 18px; color: #F3F2EE">5 motors</span><span style="font-size: 11px; color: #A3AAB5">{{t.expM1}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25"><span style="font-family: 'Geist Mono', monospace; font-size: 18px; color: #F3F2EE">20 Hz</span><span style="font-size: 11px; color: #A3AAB5">{{t.expM2}}</span></div>
+</div>
+<button type="button" onClick="{{openSnake}}" class="xc-demo" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin-top: 8px; padding: 0 16px; border-radius: 999px; border: 1px solid #FF6A3D; background: #FF6A3D; color: #0B0F14; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 13px; font-weight: 500; cursor: pointer">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"></path></svg>{{t.demoBtn}}</button>
+<a href="https://github.com/emojiwww-cyber/snake-robot-motion-control" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 13px; font-weight: 500">{{t.expRepo}}
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 600; letter-spacing: -0.01em">{{t.expRole}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #8D96A3; max-width: 720px">{{t.expIntro}}</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{expBullets}}" as="b" hint-placeholder-count="4">
+<li style="display: flex; gap: 12px; font-size: 16px; line-height: 1.65; color: #B7BDC6; max-width: 720px"><span aria-hidden="true" style="flex: 0 0 auto; font-family: 'Geist Mono', monospace; font-size: 12px; color: #FF6A3D; padding-top: 4px">{{b.n}}</span><span>{{b.text}}</span></li>
+</sc-for>
+</ul>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px">
+<sc-for list="{{expTags}}" as="tag" hint-placeholder-count="5">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; padding: 4px 12px; border-radius: 999px; background: #161C25; color: #C9CED6; border: 1px solid #2A3340">{{tag}}</span>
+</sc-for>
+</div>
+</div>
+</article>
+</section>
+
+<div aria-hidden="true" style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 0">
+<div style="position: relative; height: 72px; overflow: hidden; border-bottom: 1px dashed #2A3340">
+<div class="xc-rove" style="width: 120px; height: 64px">
+<svg viewBox="0 0 120 64" width="120" height="64">
+<rect x="50" y="4" width="14" height="10" rx="3" fill="#0B0F14" stroke="#7E9BFF" stroke-width="2"></rect>
+<circle class="xc-live" cx="57" cy="9" r="2" fill="#7E9BFF"></circle>
+<rect x="54" y="14" width="6" height="8" fill="#3A4452"></rect>
+<rect x="14" y="22" width="92" height="24" rx="6" fill="#161C25" stroke="#3A4452"></rect>
+<rect x="96" y="28" width="8" height="6" rx="2" fill="#FF6A3D"></rect>
+<g transform="translate(32,50)"><g class="xc-wheel"><circle cx="0" cy="0" r="11" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><line x1="-11" y1="0" x2="11" y2="0" stroke="#FF6A3D" stroke-width="1.5"></line><line x1="0" y1="-11" x2="0" y2="11" stroke="#FF6A3D" stroke-width="1.5"></line></g></g>
+<g transform="translate(88,50)"><g class="xc-wheel"><circle cx="0" cy="0" r="11" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><line x1="-11" y1="0" x2="11" y2="0" stroke="#FF6A3D" stroke-width="1.5"></line><line x1="0" y1="-11" x2="0" y2="11" stroke="#FF6A3D" stroke-width="1.5"></line></g></g>
+</svg>
+</div>
+<span style="position: absolute; right: 0; top: 8px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #5E6774">/cmd_vel · linear.x = 0.4</span>
+</div>
+</div>
+<section id="work" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 32px; display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 96px">
+<div class="xc-reveal" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; letter-spacing: 0.08em; color: #FF8A63">§2 · /xc/projects</span>
+<h2 style="margin: 0; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.025em">{{t.workTitle}}</h2>
+</div>
+<div role="group" aria-label="{{t.filterAria}}" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="4">
+<button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" class="xc-btn" style="{{c.style}}">{{c.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 460px), 1fr)); gap: 24px">
+<sc-for list="{{projects}}" as="p" hint-placeholder-count="4">
+<article class="xc-card" style="{{p.cardStyle}}">
+<div style="display: flex; justify-content: space-between; gap: 16px; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; color: #8D96A3">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 2px; background: {{p.dot}}"></span>{{p.id}} · {{p.catLabel}}</span>
+<span>{{p.date}}</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<sc-if value="{{p.featured}}" hint-placeholder-val="{{ false }}"><span style="align-self: flex-start; margin-bottom: 4px; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 11px; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 4px; background: rgba(126,155,255,0.12); color: #A9BCFF; border: 1px solid rgba(126,155,255,0.35)">{{t.thesisBadge}}</span></sc-if>
+<h3 style="margin: 0; font-size: {{p.titleSize}}; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em">{{p.title}}</h3>
+<span style="font-size: 14px; color: #8D96A3">{{p.role}}</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #B7BDC6">{{p.desc}}</p>
+<sc-if value="{{p.hasMetrics}}" hint-placeholder-val="{{ true }}">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px">
+<sc-for list="{{p.metrics}}" as="m" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25">
+<span style="font-family: 'Geist Mono', monospace; font-size: 18px; color: #F3F2EE; white-space: nowrap">{{m.v}}</span>
+<span style="font-size: 12px; line-height: 1.4; color: #A3AAB5">{{m.l}}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: auto; padding-top: 8px">
+<sc-for list="{{p.tags}}" as="tag" hint-placeholder-count="4">
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; padding: 4px 12px; border-radius: 999px; background: #161C25; color: #C9CED6; border: 1px solid #2A3340">{{tag}}</span>
+</sc-for>
+<sc-if value="{{p.hasDemo}}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{p.openDemo}}" class="xc-demo" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-left: auto; padding: 0 16px; border-radius: 999px; border: 1px solid #FF6A3D; background: #FF6A3D; color: #0B0F14; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 13px; font-weight: 500; cursor: pointer">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"></path></svg>{{t.demoBtn}}</button>
+</sc-if>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section id="skills" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 32px; display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 96px">
+<div class="xc-reveal" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; letter-spacing: 0.08em; color: #FF8A63">§3 · /xc/spec_sheet</span>
+<h2 style="margin: 0; font-size: 48px; line-height: 1.1; font-weight: 600; letter-spacing: -0.025em">{{t.skillsTitle}}</h2>
+</div>
+<svg aria-hidden="true" viewBox="0 0 220 130" width="220" height="130" style="flex: 0 0 auto; overflow: visible">
+<g class="xc-bob">
+<line x1="110" y1="64" x2="44" y2="40" stroke="#3A4452" stroke-width="5" stroke-linecap="round"></line>
+<line x1="110" y1="64" x2="176" y2="40" stroke="#3A4452" stroke-width="5" stroke-linecap="round"></line>
+<rect x="40" y="30" width="8" height="12" rx="2" fill="#3A4452"></rect>
+<rect x="172" y="30" width="8" height="12" rx="2" fill="#3A4452"></rect>
+<ellipse class="xc-rotor" cx="44" cy="28" rx="30" ry="4" fill="#FF6A3D" opacity="0.8"></ellipse>
+<ellipse class="xc-rotor" cx="176" cy="28" rx="30" ry="4" fill="#FF6A3D" opacity="0.8"></ellipse>
+<rect x="84" y="52" width="52" height="22" rx="8" fill="#161C25" stroke="#3A4452" stroke-width="1.5"></rect>
+<circle class="xc-live" cx="128" cy="63" r="2.5" fill="#3DDC97"></circle>
+<rect x="102" y="74" width="16" height="10" rx="3" fill="#0B0F14" stroke="#7E9BFF" stroke-width="2"></rect>
+<path d="M110 86 L84 122 L136 122 Z" fill="#7E9BFF" opacity="0.08"></path>
+</g>
+<text x="218" y="126" fill="#5E6774" font-family="Geist Mono, monospace" font-size="10" text-anchor="end">PX4 · OFFBOARD</text>
+</svg>
+</div>
+<div class="xc-reveal xc-reg" style="display: flex; flex-direction: column; padding: 8px 32px; border-radius: 4px; background-color: #10151C; border: 1px solid #2A3340">
+<sc-for list="{{skills}}" as="s" hint-placeholder-count="6">
+<div style="{{s.rowStyle}}">
+<span style="flex: 0 0 220px; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; letter-spacing: 0.08em; color: #8D96A3">{{s.head}}</span>
+<span style="flex: 1 1 320px; font-size: 16px; line-height: 1.7; color: #E9EBEE">{{s.body}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="contact" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 64px; scroll-margin-top: 96px">
+<div class="xc-reveal" style="display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; justify-content: space-between; padding: 40px 48px; border-radius: 16px; border: 1px solid #2A3340; background-color: #10151C; background-image: linear-gradient(#151C25 1px, transparent 1px), linear-gradient(90deg, #151C25 1px, transparent 1px); background-size: 40px 40px; color: #F3F2EE">
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 32px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em">{{t.contactTitle}}</h2>
+<code style="display: block; padding: 12px 16px; border-radius: 8px; background: #161C25; border: 1px solid #2A3340; font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 1.6; color: #C9CED6; overflow-x: auto; white-space: nowrap"><span style="color: #3DDC97">$</span> ros2 service call /hire xc/Intern "{season: 'Summer 2027'}"</code>
+</div>
+<div style="flex: 1 1 280px; display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" onClick="{{openEmail}}" class="xc-btn" style="flex: 1 1 100%; display: inline-flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1px solid #FF6A3D; background: #FF6A3D; color: #0B0F14; font-family: 'Geist Mono', monospace; font-weight: 500; font-size: 14px; cursor: pointer">xc2907@columbia.edu
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+<a href="https://www.linkedin.com/in/xiaotian-chen-21b137429" class="xc-btn" style="flex: 1 1 120px; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #3A4452; color: #F3F2EE; font-weight: 600; font-size: 15px">LinkedIn</a>
+<a href="https://github.com/emojiwww-cyber" class="xc-btn" style="flex: 1 1 120px; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #3A4452; color: #F3F2EE; font-weight: 600; font-size: 15px">GitHub</a>
+</div>
+</div>
+<footer style="display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding-top: 24px; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; color: #8D96A3">
+<span>© 2026 Xiaotian Chen · 陈晓天</span>
+<span>{{t.updated}}</span>
+</footer>
+</section>
+
+<sc-if value="{{emailOpen}}" hint-placeholder-val="{{ false }}">
+<div class="xc-overlay" onClick="{{closeEmail}}" style="position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(11,15,20,0.78); backdrop-filter: blur(4px)">
+<div role="dialog" aria-modal="true" aria-labelledby="xc-email-title" class="xc-dialog" onClick="{{stop}}" style="width: 100%; max-width: 460px; display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 16px; border: 1px solid #2A3340; background: #10151C; color: #E9EBEE">
+<div style="display: flex; gap: 16px; align-items: flex-start; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8D96A3">/xc/contact · email</span>
+<h2 id="xc-email-title" style="margin: 0; font-size: 22px; font-weight: 600; color: #F3F2EE">{{t.emailTitle}}</h2>
+</div>
+<button type="button" onClick="{{closeEmail}}" aria-label="{{t.close}}" class="xc-btn" style="flex: 0 0 auto; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid #3A4452; background: transparent; color: #F3F2EE; cursor: pointer">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+<label for="xc-email-input" style="font-size: 13px; color: #B7BDC6">{{t.emailHint}}</label>
+<div style="display: flex; gap: 8px">
+<input id="xc-email-input" type="text" readonly="readonly" value="xc2907@columbia.edu" style="flex: 1 1 auto; min-width: 0; min-height: 48px; padding: 0 16px; border-radius: 8px; border: 1px solid #3A4452; background: #0B0F14; color: #F3F2EE; font-family: 'Geist Mono', monospace; font-size: 15px">
+<button type="button" onClick="{{copyEmail}}" class="xc-btn" style="flex: 0 0 auto; min-height: 48px; min-width: 96px; padding: 0 16px; border-radius: 8px; border: 1px solid #FF6A3D; background: #FF6A3D; color: #0B0F14; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 14px; font-weight: 500; cursor: pointer">{{copyLabel}}</button>
+</div>
+<a href="mailto:xc2907@columbia.edu" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 13px">{{t.emailOpenApp}} →</a>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{demoOpen}}" hint-placeholder-val="{{ false }}">
+<div class="xc-overlay" onClick="{{closeDemo}}" style="position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(11,15,20,0.78); backdrop-filter: blur(4px)">
+<div role="dialog" aria-modal="true" aria-labelledby="xc-demo-title" class="xc-dialog" onClick="{{stop}}" style="width: 100%; max-width: 980px; max-height: 100%; overflow: auto; display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 16px; border: 1px solid #2A3340; background-color: #0B0F14; background-image: linear-gradient(#151C25 1px, transparent 1px), linear-gradient(90deg, #151C25 1px, transparent 1px); background-size: 40px 40px; color: #E9EBEE">
+<div style="display: flex; gap: 16px; align-items: flex-start; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8D96A3"><span class="xc-live" style="color: #FF6A3D">●</span> {{demo.topic}}</span>
+<h2 id="xc-demo-title" style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 600; color: #F3F2EE">{{demo.title}}</h2>
+</div>
+<button type="button" onClick="{{closeDemo}}" aria-label="{{t.close}}" class="xc-btn" style="flex: 0 0 auto; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid #3A4452; background: transparent; color: #F3F2EE; cursor: pointer">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+
+<sc-if value="{{demo.isSnake}}" hint-placeholder-val="{{ true }}">
+<div style="border-radius: 12px; border: 1px solid #2A3340; background: rgba(16,21,28,0.9); padding: 16px">
+<svg role="img" aria-label="{{t.snakeTitle}}" viewBox="0 0 940 300" style="display: block; width: 100%; max-height: 52vh; height: auto; overflow: visible; margin: 8px 0">
+<line x1="0" y1="150" x2="940" y2="150" stroke="#2A313C" stroke-width="1" stroke-dasharray="2 6"></line>
+<rect x="8" y="80" width="124" height="140" rx="10" fill="#1A212B" stroke="#3A4452"></rect>
+<line x1="54" y1="98" x2="132" y2="142" stroke="#E5484D" stroke-width="1.2" opacity="0.85"></line>
+<line x1="54" y1="124" x2="132" y2="144" stroke="#E5484D" stroke-width="1.2" opacity="0.85"></line>
+<line x1="54" y1="150" x2="132" y2="146" stroke="#E5484D" stroke-width="1.2" opacity="0.85"></line>
+<line x1="54" y1="176" x2="132" y2="148" stroke="#E5484D" stroke-width="1.2" opacity="0.85"></line>
+<line x1="54" y1="202" x2="132" y2="150" stroke="#E5484D" stroke-width="1.2" opacity="0.85"></line>
+<g transform="translate(46,98)"><g class="xc-pulley" style="animation-delay: -0.0s"><circle cx="0" cy="0" r="9" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><line x1="-9" y1="0" x2="9" y2="0" stroke="#FF6A3D" stroke-width="1.5"></line></g></g>
+<text x="22" y="102" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">M1</text>
+<g transform="translate(46,124)"><g class="xc-pulley" style="animation-delay: -0.3s"><circle cx="0" cy="0" r="9" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><line x1="-9" y1="0" x2="9" y2="0" stroke="#FF6A3D" stroke-width="1.5"></line></g></g>
+<text x="22" y="128" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">M2</text>
+<g transform="translate(46,150)"><g class="xc-pulley" style="animation-delay: -0.6s"><circle cx="0" cy="0" r="9" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><line x1="-9" y1="0" x2="9" y2="0" stroke="#FF6A3D" stroke-width="1.5"></line></g></g>
+<text x="22" y="154" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">M3</text>
+<g transform="translate(46,176)"><g class="xc-pulley" style="animation-delay: -0.9s"><circle cx="0" cy="0" r="9" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><line x1="-9" y1="0" x2="9" y2="0" stroke="#FF6A3D" stroke-width="1.5"></line></g></g>
+<text x="22" y="180" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">M4</text>
+<g transform="translate(46,202)"><g class="xc-pulley" style="animation-delay: -1.2s"><circle cx="0" cy="0" r="9" fill="#0B0F14" stroke="#FF6A3D" stroke-width="2"></circle><line x1="-9" y1="0" x2="9" y2="0" stroke="#FF6A3D" stroke-width="1.5"></line></g></g>
+<text x="22" y="206" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">M5</text>
+<text x="70" y="240" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">DRIVE BOX</text>
+<rect x="132" y="137" width="52" height="26" rx="4" fill="#556B3A" stroke="#6E8650"></rect>
+<line x1="132" y1="146" x2="184" y2="146" stroke="#E5484D" stroke-width="1.2"></line><line x1="132" y1="154" x2="184" y2="154" stroke="#E5484D" stroke-width="1.2"></line>
+<g transform="translate(184,150)">
+<g class="xc-s" style="animation-delay: -0.000s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -0.231s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -0.462s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -0.692s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -0.923s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -1.154s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -1.385s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -1.615s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -1.846s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -2.077s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -2.308s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -2.538s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -2.769s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -3.000s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -3.231s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -3.462s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -3.692s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -3.923s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -4.154s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -4.385s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -4.615s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -4.846s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -5.077s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -5.308s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -5.538s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<g class="xc-s" style="animation-delay: -5.769s">
+<rect x="0" y="-6" width="27" height="12" fill="#222A35"></rect>
+<line x1="0" y1="-4" x2="27" y2="-4" stroke="#E5484D" stroke-width="1.2"></line><line x1="0" y1="4" x2="27" y2="4" stroke="#E5484D" stroke-width="1.2"></line>
+<rect x="-4" y="-14" width="9" height="28" rx="3" fill="#7F8CA8" stroke="#B4BED1" stroke-width="1"></rect>
+<g transform="translate(27,0)">
+<rect x="-2" y="-12" width="22" height="24" rx="6" fill="#0B0F14" stroke="{{accentOnDark}}" stroke-width="2"></rect><circle cx="12" cy="0" r="4" fill="{{accentOnDark}}"></circle>
+</g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g>
+</g></svg>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; font-family: 'Geist Mono', monospace">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25"><span style="font-size: 11px; color: #8D96A3">ACTUATION</span><span style="font-size: 16px; color: #F3F2EE">{{t.snakeR1}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25"><span style="font-size: 11px; color: #8D96A3">BUS</span><span style="font-size: 16px; color: #F3F2EE">CAN / CAN-FD</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25"><span style="font-size: 11px; color: #8D96A3">RECORD / PLAYBACK</span><span style="font-size: 16px; color: #F3F2EE">20 Hz · 0.5–2×</span></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{demo.isCsi}}" hint-placeholder-val="{{ false }}">
+<div style="border-radius: 12px; border: 1px solid #2A3340; background: rgba(16,21,28,0.9); padding: 16px">
+<svg role="img" aria-label="{{t.csiAlt}}" viewBox="0 0 900 640" style="display: block; width: 100%; max-height: 60vh; height: auto; margin: 4px 0">
+<defs><clipPath id="xc-wclip"><rect x="0" y="0" width="200" height="40"></rect></clipPath></defs>
+<rect x="30" y="30" width="840" height="430" rx="6" fill="none" stroke="#3A4452" stroke-width="3"></rect>
+<line x1="160" y1="460" x2="230" y2="460" stroke="#0B0F14" stroke-width="5"></line><line x1="670" y1="460" x2="740" y2="460" stroke="#0B0F14" stroke-width="5"></line>
+<text x="44" y="52" fill="#5E6774" font-family="Geist Mono, monospace" font-size="11">ROOM · INDOOR TESTBED</text>
+<path d="M450,95 L290,370 L610,370 Z" fill="rgba(255,106,61,0.06)" stroke="#FF6A3D" stroke-width="1.2" stroke-dasharray="5 6" opacity="0.8"></path>
+<text x="450" y="352" fill="#FF8A63" font-family="Geist Mono, monospace" font-size="11" text-anchor="middle">SENSING ZONE</text>
+<line x1="800" y1="250" x2="450" y2="95" stroke="#7E9BFF" stroke-width="1.2" opacity="0.45"></line>
+<line x1="800" y1="250" x2="610" y2="370" stroke="#7E9BFF" stroke-width="1.2" opacity="0.45"></line>
+<line x1="800" y1="250" x2="450" y2="265" stroke="#7E9BFF" stroke-width="1.2" opacity="0.45"></line>
+<line x1="110" y1="250" x2="450" y2="95" stroke="#3DDC97" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.6"></line>
+<line x1="110" y1="250" x2="290" y2="370" stroke="#3DDC97" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.6"></line>
+<line x1="290" y1="370" x2="610" y2="370" stroke="#3DDC97" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.6"></line>
+<line x1="110" y1="250" x2="800" y2="250" stroke="#3A4452" stroke-width="1" stroke-dasharray="2 8"></line>
+<circle class="xc-ripple xc-motion" cx="800" cy="250" r="120" fill="none" stroke="#7E9BFF" stroke-width="1.5" style="animation-delay: -0.0s"></circle>
+<circle class="xc-ripple xc-motion" cx="800" cy="250" r="120" fill="none" stroke="#7E9BFF" stroke-width="1.5" style="animation-delay: -0.8s"></circle>
+<circle class="xc-ripple xc-motion" cx="800" cy="250" r="120" fill="none" stroke="#7E9BFF" stroke-width="1.5" style="animation-delay: -1.6s"></circle>
+<g class="xc-motion xc-pkt"><circle r="4" fill="#7E9BFF"></circle><animateMotion dur="1.6s" begin="0s" repeatCount="indefinite" path="M800,250 L450,95"></animateMotion></g>
+<g class="xc-motion xc-pkt"><circle r="4" fill="#7E9BFF"></circle><animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite" path="M800,250 L610,370"></animateMotion></g>
+<g class="xc-motion xc-pkt"><circle r="4" fill="#7E9BFF"></circle><animateMotion dur="2.0s" begin="0.9s" repeatCount="indefinite" path="M800,250 L290,370"></animateMotion></g>
+<line x1="800" y1="250" x2="290" y2="370" stroke="#7E9BFF" stroke-width="1.2" opacity="0.45"></line>
+<g class="xc-motion xc-pkt"><rect x="-4" y="-4" width="8" height="8" rx="1" fill="#3DDC97"></rect><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite" path="M110,250 L450,95"></animateMotion></g>
+<g class="xc-motion xc-pkt"><rect x="-4" y="-4" width="8" height="8" rx="1" fill="#3DDC97"></rect><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite" path="M110,250 L290,370"></animateMotion></g>
+<g class="xc-motion xc-pkt"><rect x="-4" y="-4" width="8" height="8" rx="1" fill="#3DDC97"></rect><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite" path="M290,370 L610,370"></animateMotion></g>
+<g transform="translate(110,250)">
+<rect x="-34" y="-30" width="68" height="46" rx="4" fill="#161C25" stroke="#C9CED6" stroke-width="2"></rect>
+<rect x="-28" y="-24" width="56" height="34" rx="2" fill="#0B0F14"></rect>
+<path d="M-22 -2 L-14 -10 L-6 -4 L4 -16 L12 -8 L22 -14" fill="none" stroke="#3DDC97" stroke-width="1.5"></path>
+<rect x="-6" y="16" width="12" height="8" fill="#3A4452"></rect><rect x="-20" y="24" width="40" height="5" rx="2" fill="#3A4452"></rect>
+<text x="0" y="48" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">Host PC</text>
+<text x="0" y="62" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">control · traffic · TCP sync</text>
+</g>
+<g transform="translate(800,250)">
+<line x1="-18" y1="-14" x2="-24" y2="-44" stroke="#C9CED6" stroke-width="3" stroke-linecap="round"></line>
+<line x1="0" y1="-14" x2="0" y2="-48" stroke="#C9CED6" stroke-width="3" stroke-linecap="round"></line>
+<line x1="18" y1="-14" x2="24" y2="-44" stroke="#C9CED6" stroke-width="3" stroke-linecap="round"></line>
+<rect x="-34" y="-14" width="68" height="24" rx="4" fill="#161C25" stroke="#C9CED6" stroke-width="2"></rect>
+<circle class="xc-live" cx="-20" cy="-2" r="2.5" fill="#3DDC97"></circle><circle cx="-12" cy="-2" r="2.5" fill="#3DDC97"></circle><circle cx="-4" cy="-2" r="2.5" fill="#3DDC97"></circle>
+<text x="0" y="32" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">Wi-Fi AP</text>
+<text x="0" y="46" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">transmitter</text>
+</g>
+<g transform="translate(450,95)">
+<rect x="-30" y="-20" width="60" height="40" rx="5" fill="#1F5F3F" stroke="#3DDC97" stroke-width="1.5"></rect>
+<rect x="-12" y="-8" width="18" height="16" rx="2" fill="#0B0F14" stroke="#2E7D57"></rect>
+<rect x="12" y="-16" width="12" height="8" rx="1" fill="#C9CED6"></rect><rect x="12" y="-4" width="12" height="8" rx="1" fill="#C9CED6"></rect>
+<line x1="-26" y1="-16" x2="-26" y2="16" stroke="#E0B84A" stroke-width="2" stroke-dasharray="2 2"></line>
+<circle class="xc-live" cx="-20" cy="13" r="2.5" fill="#FF6A3D"></circle>
+<text x="0" y="36" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">Pi Node 1</text>
+<text x="0" y="50" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">CSI collector</text>
+</g>
+<g transform="translate(290,370)">
+<rect x="-30" y="-20" width="60" height="40" rx="5" fill="#1F5F3F" stroke="#3DDC97" stroke-width="1.5"></rect>
+<rect x="-12" y="-8" width="18" height="16" rx="2" fill="#0B0F14" stroke="#2E7D57"></rect>
+<rect x="12" y="-16" width="12" height="8" rx="1" fill="#C9CED6"></rect><rect x="12" y="-4" width="12" height="8" rx="1" fill="#C9CED6"></rect>
+<line x1="-26" y1="-16" x2="-26" y2="16" stroke="#E0B84A" stroke-width="2" stroke-dasharray="2 2"></line>
+<circle class="xc-live" cx="-20" cy="13" r="2.5" fill="#FF6A3D"></circle>
+<text x="0" y="36" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">Pi Node 2</text>
+<text x="0" y="50" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">CSI collector</text>
+</g>
+<g transform="translate(610,370)">
+<rect x="-30" y="-20" width="60" height="40" rx="5" fill="#1F5F3F" stroke="#3DDC97" stroke-width="1.5"></rect>
+<rect x="-12" y="-8" width="18" height="16" rx="2" fill="#0B0F14" stroke="#2E7D57"></rect>
+<rect x="12" y="-16" width="12" height="8" rx="1" fill="#C9CED6"></rect><rect x="12" y="-4" width="12" height="8" rx="1" fill="#C9CED6"></rect>
+<line x1="-26" y1="-16" x2="-26" y2="16" stroke="#E0B84A" stroke-width="2" stroke-dasharray="2 2"></line>
+<circle class="xc-live" cx="-20" cy="13" r="2.5" fill="#FF6A3D"></circle>
+<text x="0" y="36" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">Pi Node 3</text>
+<text x="0" y="50" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">CSI collector</text>
+</g>
+<g transform="translate(450,265)">
+<g class="xc-act xc-act0" style="animation-delay: 0s"><circle cx="0" cy="-44" r="8" fill="#F3F2EE"></circle><path d="M0 -34 L0 0 M0 -26 L-11 -8 M0 -26 L11 -8 M0 0 L-8 28 M0 0 L8 28" fill="none" stroke="#F3F2EE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<g class="xc-act" style="animation-delay: -9.6s"><path d="M-18 6 L18 6 M-16 6 L-16 28 M14 6 L14 28 M-18 -18 L-18 6" fill="none" stroke="#5E6774" stroke-width="3" stroke-linecap="round"></path><circle cx="-6" cy="-36" r="8" fill="#F3F2EE"></circle><path d="M-8 -26 L-8 2 L14 2 L14 26 M-8 -18 L6 -6" fill="none" stroke="#F3F2EE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<g class="xc-act" style="animation-delay: -7.2s"><circle cx="2" cy="-44" r="8" fill="#F3F2EE"></circle><path d="M1 -34 L3 0 M1 -26 L-10 -12 M1 -26 L12 -14 M3 0 L-8 27 M3 0 L13 26" fill="none" stroke="#F3F2EE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<g class="xc-act" style="animation-delay: -4.8s"><circle cx="8" cy="-42" r="8" fill="#F3F2EE"></circle><path d="M5 -32 L-3 -4 M4 -26 L16 -18 L20 -28 M4 -26 L-10 -18 L-18 -24 M-3 -4 L10 8 L4 26 M-3 -4 L-14 10 L-24 6" fill="none" stroke="#F3F2EE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<g class="xc-act" style="animation-delay: -2.4s"><circle cx="0" cy="-56" r="8" fill="#F3F2EE"></circle><path d="M0 -46 L0 -14 M0 -38 L-15 -54 M0 -38 L15 -54 M0 -14 L-13 2 M0 -14 L13 2" fill="none" stroke="#F3F2EE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><ellipse cx="0" cy="30" rx="16" ry="3" fill="#2A3340"></ellipse></g>
+</g>
+<g transform="translate(450,317)">
+<text class="xc-act xc-act0" style="animation-delay: 0s" x="0" y="0" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">{{t.act0}}</text>
+<text class="xc-act" style="animation-delay: -9.6s" x="0" y="0" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">{{t.act1}}</text>
+<text class="xc-act" style="animation-delay: -7.2s" x="0" y="0" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">{{t.act2}}</text>
+<text class="xc-act" style="animation-delay: -4.8s" x="0" y="0" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">{{t.act3}}</text>
+<text class="xc-act" style="animation-delay: -2.4s" x="0" y="0" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">{{t.act4}}</text>
+</g>
+<g transform="translate(44,438)" font-family="Geist Mono, monospace" font-size="10"><circle cx="4" cy="-4" r="4" fill="#7E9BFF"></circle><text x="14" y="0" fill="#8D96A3">Wi-Fi packets</text><rect x="110" y="-8" width="8" height="8" rx="1" fill="#3DDC97"></rect><text x="124" y="0" fill="#8D96A3">TCP trigger / sync</text></g>
+<text x="30" y="490" fill="#5E6774" font-family="Geist Mono, monospace" font-size="11">PIPELINE</text>
+<g transform="translate(30,504)"><rect x="0" y="0" width="250" height="38" rx="6" fill="#161C25" stroke="#2A3340"></rect><text x="10" y="23" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10">Pi 1</text><g transform="translate(44,0)" clip-path="url(#xc-wclip)"><path class="xc-wave" style="animation-delay: -0.0s" d="M0,14.3 L4,13.7 L8,14.8 L12,15.5 L16,15.1 L20,14.3 L24,14.1 L28,14.5 L32,14.2 L36,12.5 L40,9.9 L44,8.6 L48,10.3 L52,15.0 L56,20.3 L60,23.7 L64,24.3 L68,23.2 L72,22.5 L76,22.9 L80,23.7 L84,23.9 L88,23.5 L92,23.8 L96,25.5 L100,28.1 L104,29.4 L108,27.7 L112,23.0 L116,17.7 L120,14.3 L124,13.7 L128,14.8 L132,15.5 L136,15.1 L140,14.3 L144,14.1 L148,14.5 L152,14.2 L156,12.5 L160,9.9 L164,8.6 L168,10.3 L172,15.0 L176,20.3 L180,23.7 L184,24.3 L188,23.2 L192,22.5 L196,22.9 L200,23.7 L204,23.9 L208,23.5 L212,23.8 L216,25.5 L220,28.1 L224,29.4 L228,27.7 L232,23.0 L236,17.7 L240,14.3 L244,13.7 L248,14.8 L252,15.5 L256,15.1 L260,14.3 L264,14.1 L268,14.5 L272,14.2 L276,12.5 L280,9.9 L284,8.6 L288,10.3 L292,15.0 L296,20.3 L300,23.7 L304,24.3 L308,23.2 L312,22.5 L316,22.9 L320,23.7 L324,23.9 L328,23.5 L332,23.8 L336,25.5 L340,28.1 L344,29.4 L348,27.7 L352,23.0 L356,17.7 L360,14.3 L364,13.7 L368,14.8 L372,15.5 L376,15.1 L380,14.3 L384,14.1 L388,14.5 L392,14.2 L396,12.5 L400,9.9 L404,8.6 L408,10.3 L412,15.0 L416,20.3 L420,23.7 L424,24.3 L428,23.2 L432,22.5 L436,22.9 L440,23.7 L444,23.9 L448,23.5 L452,23.8 L456,25.5 L460,28.1 L464,29.4 L468,27.7 L472,23.0 L476,17.7 L480,14.3" fill="none" stroke="#7E9BFF" stroke-width="1.5"></path></g></g>
+<g transform="translate(30,548)"><rect x="0" y="0" width="250" height="38" rx="6" fill="#161C25" stroke="#2A3340"></rect><text x="10" y="23" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10">Pi 2</text><g transform="translate(44,0)" clip-path="url(#xc-wclip)"><path class="xc-wave" style="animation-delay: -0.7s" d="M0,17.1 L4,16.0 L8,14.4 L12,13.2 L16,13.7 L20,15.7 L24,17.9 L28,18.8 L32,18.4 L36,18.3 L40,20.3 L44,24.1 L48,27.6 L52,28.5 L56,25.8 L60,20.9 L64,16.1 L68,12.9 L72,11.1 L76,10.0 L80,9.8 L84,11.6 L88,16.2 L92,22.6 L96,28.1 L100,30.2 L104,28.3 L108,24.1 L112,20.2 L116,18.1 L120,17.1 L124,16.0 L128,14.4 L132,13.2 L136,13.7 L140,15.7 L144,17.9 L148,18.8 L152,18.4 L156,18.3 L160,20.3 L164,24.1 L168,27.6 L172,28.5 L176,25.8 L180,20.9 L184,16.1 L188,12.9 L192,11.1 L196,10.0 L200,9.8 L204,11.6 L208,16.2 L212,22.6 L216,28.1 L220,30.2 L224,28.3 L228,24.1 L232,20.2 L236,18.1 L240,17.1 L244,16.0 L248,14.4 L252,13.2 L256,13.7 L260,15.7 L264,17.9 L268,18.8 L272,18.4 L276,18.3 L280,20.3 L284,24.1 L288,27.6 L292,28.5 L296,25.8 L300,20.9 L304,16.1 L308,12.9 L312,11.1 L316,10.0 L320,9.8 L324,11.6 L328,16.2 L332,22.6 L336,28.1 L340,30.2 L344,28.3 L348,24.1 L352,20.2 L356,18.1 L360,17.1 L364,16.0 L368,14.4 L372,13.2 L376,13.7 L380,15.7 L384,17.9 L388,18.8 L392,18.4 L396,18.3 L400,20.3 L404,24.1 L408,27.6 L412,28.5 L416,25.8 L420,20.9 L424,16.1 L428,12.9 L432,11.1 L436,10.0 L440,9.8 L444,11.6 L448,16.2 L452,22.6 L456,28.1 L460,30.2 L464,28.3 L468,24.1 L472,20.2 L476,18.1 L480,17.1" fill="none" stroke="#7E9BFF" stroke-width="1.5"></path></g></g>
+<g transform="translate(30,592)"><rect x="0" y="0" width="250" height="38" rx="6" fill="#161C25" stroke="#2A3340"></rect><text x="10" y="23" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10">Pi 3</text><g transform="translate(44,0)" clip-path="url(#xc-wclip)"><path class="xc-wave" style="animation-delay: -1.4s" d="M0,19.0 L4,15.2 L8,13.6 L12,15.2 L16,18.5 L20,21.3 L24,22.1 L28,21.4 L32,20.6 L36,20.2 L40,19.7 L44,18.2 L48,15.9 L52,14.5 L56,15.5 L60,19.0 L64,22.8 L68,24.4 L72,22.8 L76,19.5 L80,16.7 L84,15.9 L88,16.6 L92,17.4 L96,17.8 L100,18.3 L104,19.8 L108,22.1 L112,23.5 L116,22.5 L120,19.0 L124,15.2 L128,13.6 L132,15.2 L136,18.5 L140,21.3 L144,22.1 L148,21.4 L152,20.6 L156,20.2 L160,19.7 L164,18.2 L168,15.9 L172,14.5 L176,15.5 L180,19.0 L184,22.8 L188,24.4 L192,22.8 L196,19.5 L200,16.7 L204,15.9 L208,16.6 L212,17.4 L216,17.8 L220,18.3 L224,19.8 L228,22.1 L232,23.5 L236,22.5 L240,19.0 L244,15.2 L248,13.6 L252,15.2 L256,18.5 L260,21.3 L264,22.1 L268,21.4 L272,20.6 L276,20.2 L280,19.7 L284,18.2 L288,15.9 L292,14.5 L296,15.5 L300,19.0 L304,22.8 L308,24.4 L312,22.8 L316,19.5 L320,16.7 L324,15.9 L328,16.6 L332,17.4 L336,17.8 L340,18.3 L344,19.8 L348,22.1 L352,23.5 L356,22.5 L360,19.0 L364,15.2 L368,13.6 L372,15.2 L376,18.5 L380,21.3 L384,22.1 L388,21.4 L392,20.6 L396,20.2 L400,19.7 L404,18.2 L408,15.9 L412,14.5 L416,15.5 L420,19.0 L424,22.8 L428,24.4 L432,22.8 L436,19.5 L440,16.7 L444,15.9 L448,16.6 L452,17.4 L456,17.8 L460,18.3 L464,19.8 L468,22.1 L472,23.5 L476,22.5 L480,19.0" fill="none" stroke="#7E9BFF" stroke-width="1.5"></path></g></g>
+<path d="M286 562 L312 562 M306 556 L314 562 L306 568" fill="none" stroke="#5E6774" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<g transform="translate(320,530)"><rect x="0" y="0" width="150" height="64" rx="8" fill="#161C25" stroke="#3A4452" stroke-width="1.5"></rect><text x="75.0" y="28" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">Preprocess</text><text x="75.0" y="46" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">filter · subcarrier · win</text></g>
+<path d="M474 562 L500 562 M494 556 L502 562 L494 568" fill="none" stroke="#5E6774" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<g transform="translate(508,530)"><rect x="0" y="0" width="140" height="64" rx="8" fill="#161C25" stroke="#3A4452" stroke-width="1.5"></rect><text x="70.0" y="28" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">Weighted fusion</text><text x="70.0" y="46" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">decision-level</text></g>
+<path d="M652 562 L678 562 M672 556 L680 562 L672 568" fill="none" stroke="#5E6774" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<g transform="translate(686,530)"><rect x="0" y="0" width="184" height="64" rx="8" fill="#161C25" stroke="#FF6A3D" stroke-width="1.5"></rect><text x="92.0" y="28" fill="#E9EBEE" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle"></text><text x="92.0" y="46" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle"></text></g>
+<text x="778" y="554" fill="#8D96A3" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">PyTorch HAR → prediction</text>
+<text class="xc-act xc-act0" style="animation-delay: 0s" x="778" y="576" fill="#FF8A63" font-family="Geist Mono, monospace" font-size="14" text-anchor="middle">{{t.act0}}</text>
+<text class="xc-act" style="animation-delay: -9.6s" x="778" y="576" fill="#FF8A63" font-family="Geist Mono, monospace" font-size="14" text-anchor="middle">{{t.act1}}</text>
+<text class="xc-act" style="animation-delay: -7.2s" x="778" y="576" fill="#FF8A63" font-family="Geist Mono, monospace" font-size="14" text-anchor="middle">{{t.act2}}</text>
+<text class="xc-act" style="animation-delay: -4.8s" x="778" y="576" fill="#FF8A63" font-family="Geist Mono, monospace" font-size="14" text-anchor="middle">{{t.act3}}</text>
+<text class="xc-act" style="animation-delay: -2.4s" x="778" y="576" fill="#FF8A63" font-family="Geist Mono, monospace" font-size="14" text-anchor="middle">{{t.act4}}</text>
+</svg>
+</div>
+</sc-if>
+
+<sc-if value="{{demo.isFig8}}" hint-placeholder-val="{{ false }}">
+<div style="border-radius: 12px; border: 1px solid #2A3340; background: rgba(16,21,28,0.9); padding: 16px">
+<div style="display: flex; justify-content: space-between; gap: 16px; font-family: 'Geist Mono', monospace; font-size: 11px; color: #8D96A3; letter-spacing: 0.06em">
+<span>REF.TRAJ = FIGURE-8</span>
+<span>PID · HALL ENC · 4WD</span>
+</div>
+<svg role="img" aria-label="{{t.fig8alt}}" viewBox="0 0 520 260" style="display: block; width: 100%; max-height: 52vh; height: auto; margin: 8px 0">
+<line x1="260" y1="20" x2="260" y2="240" stroke="#2A313C" stroke-width="1" stroke-dasharray="2 6"></line>
+<line x1="20" y1="130" x2="500" y2="130" stroke="#2A313C" stroke-width="1" stroke-dasharray="2 6"></line>
+<path d="M260,130 C320,30 470,30 470,130 C470,230 320,230 260,130 C200,30 50,30 50,130 C50,230 200,230 260,130 Z" fill="none" stroke="#3A4452" stroke-width="10" stroke-linejoin="round" opacity="0.5"></path>
+<path class="xc-trace" d="M260,130 C320,30 470,30 470,130 C470,230 320,230 260,130 C200,30 50,30 50,130 C50,230 200,230 260,130 Z" fill="none" stroke="{{accentOnDark}}" stroke-width="2" stroke-linejoin="round"></path>
+<g class="xc-motion">
+<g>
+<rect x="-10" y="-7" width="20" height="14" rx="3" fill="#FF6A3D"></rect>
+<path d="M10 0 L16 0" stroke="#FF6A3D" stroke-width="2" stroke-linecap="round"></path>
+<animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="M260,130 C320,30 470,30 470,130 C470,230 320,230 260,130 C200,30 50,30 50,130 C50,230 200,230 260,130 Z"></animateMotion>
+</g>
+</g>
+<text x="470" y="250" fill="#6B7380" font-family="Geist Mono, monospace" font-size="10" text-anchor="end">x [m]</text>
+<text x="266" y="28" fill="#6B7380" font-family="Geist Mono, monospace" font-size="10">y [m]</text>
+</svg>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; font-family: 'Geist Mono', monospace">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25"><span style="font-size: 11px; color: #8D96A3">DEVIATION</span><span style="font-size: 16px; color: #F3F2EE">&lt; ±2 cm</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25"><span style="font-size: 11px; color: #8D96A3">SPEED RIPPLE</span><span style="font-size: 16px; color: #F3F2EE">&lt; ±3%</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 8px; background: #161C25"><span style="font-size: 11px; color: #8D96A3">CONTINUOUS RUN</span><span style="font-size: 16px; color: #F3F2EE">5 min</span></div>
+</div>
+</div>
+</sc-if>
+
+<p style="margin: 0; font-family: 'Geist Mono', 'Noto Sans SC', monospace; font-size: 12px; line-height: 1.6; color: #8D96A3">{{demo.caption}}</p>
+</div>
+</div>
+</sc-if>
+
+</div>
+</template>
+<script>
+/* Minimal renderer for the page template: {{holes}}, <sc-for>, <sc-if>, on* handlers. */
+(function () {
+  'use strict';
+  function DCLogic(props) { this.props = props || {}; this.state = {}; }
+  DCLogic.prototype.setState = function (patch, cb) {
+    Object.assign(this.state, typeof patch === 'function' ? patch(this.state) : patch);
+    scheduleRender(cb);
+  };
+  DCLogic.prototype.forceUpdate = function (cb) { scheduleRender(cb); };
+  window.DCLogic = DCLogic;
+
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  var WHOLE = /^\{\{\s*([^}]+?)\s*\}\}$/;
+
+  function lookup(path, ctx) {
+    if (path === 'true') return true;
+    if (path === 'false') return false;
+    if (path === 'null') return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split('.');
+    var v = ctx;
+    for (var i = 0; i < parts.length; i++) {
+      if (v == null) return undefined;
+      v = v[parts[i]];
+    }
+    return v;
+  }
+  function interp(str, ctx) {
+    return str.replace(HOLE, function (_, p) {
+      var v = lookup(p, ctx);
+      return v == null ? '' : String(v);
+    });
+  }
+
+  function renderChildren(src, out, ctx) {
+    for (var n = src.firstChild; n; n = n.nextSibling) renderNode(n, out, ctx);
+  }
+
+  function renderNode(n, out, ctx) {
+    if (n.nodeType === 3) {
+      out.appendChild(document.createTextNode(n.nodeValue.indexOf('{{') >= 0 ? interp(n.nodeValue, ctx) : n.nodeValue));
+      return;
+    }
+    if (n.nodeType !== 1) return;
+    var tag = n.localName;
+    if (tag === 'sc-for') {
+      var m = (n.getAttribute('list') || '').match(WHOLE);
+      var list = m ? lookup(m[1], ctx) : null;
+      var as = n.getAttribute('as') || 'item';
+      if (Array.isArray(list)) {
+        list.forEach(function (item, i) {
+          var c = Object.create(ctx);
+          c[as] = item; c.$index = i;
+          renderChildren(n, out, c);
+        });
+      }
+      return;
+    }
+    if (tag === 'sc-if') {
+      var mv = (n.getAttribute('value') || '').match(WHOLE);
+      if (mv && lookup(mv[1], ctx)) renderChildren(n, out, ctx);
+      return;
+    }
+    var el = n.cloneNode(false);
+    var attrs = Array.prototype.slice.call(n.attributes);
+    attrs.forEach(function (a) {
+      var name = a.name, val = a.value;
+      if (name.indexOf('hint-') === 0) { el.removeAttribute(name); return; }
+      if (name.length > 2 && name.slice(0, 2) === 'on') {
+        el.removeAttribute(name);
+        var mm = val.match(WHOLE);
+        var fn = mm ? lookup(mm[1], ctx) : null;
+        if (typeof fn === 'function') el.addEventListener(name.slice(2).toLowerCase(), fn);
+        return;
+      }
+      if (val.indexOf('{{') >= 0) {
+        var whole = val.match(WHOLE);
+        var v = whole ? lookup(whole[1], ctx) : interp(val, ctx);
+        if (v === false || v == null) el.removeAttribute(name);
+        else el.setAttribute(name, String(v));
+        if (name === 'value' && 'value' in el) el.value = String(v == null ? '' : v);
+      }
+    });
+    renderChildren(n.content ? n.content : n, el, ctx);
+    out.appendChild(el);
+  }
+
+  var tpl, root, comp, pending = false, cbs = [];
+  function render() {
+    var vals = comp.renderVals();
+    var frag = document.createDocumentFragment();
+    renderChildren(tpl.content, frag, vals);
+    var y = window.scrollY;
+    root.replaceChildren(frag);
+    if (window.scrollY !== y) window.scrollTo(0, y);
+  }
+  function scheduleRender(cb) {
+    if (cb) cbs.push(cb);
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(function () {
+      pending = false;
+      render();
+      var list = cbs; cbs = [];
+      list.forEach(function (f) { try { f(); } catch (e) { console.error(e); } });
+    });
+  }
+
+  window.__mountPage = function (Component, props) {
+    tpl = document.getElementById('page-template');
+    root = document.getElementById('app');
+    comp = new Component(props || {});
+    render();
+    if (location.hash) {
+      var t = document.getElementById(location.hash.slice(1));
+      if (t) t.scrollIntoView();
+    }
+  };
+})();
+
+</script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lang: null, filter: 'all', demo: null, resumeOpen: false, emailOpen: false, copied: false };
+  }
+  renderVals() {
+    const lang = this.state.lang || this.props.startLang || 'en';
+    const accent = this.props.accent ?? '#1E40D8';
+    const accentOnDark = this.props.accent ?? '#7E9BFF';
+    const L = (o) => (o && typeof o === 'object' && !Array.isArray(o)) ? o[lang] : o;
+
+    const T = {
+      en: {
+        navExp: 'Internship', navWork: 'Projects', navSkills: 'Skills', navContact: 'Contact',
+        langLabel: '中文', langAria: 'Switch to Chinese',
+        status: 'OPEN TO SUMMER 2027 INTERNSHIPS', eyebrow: 'M.S. EE · COLUMBIA', eyebrow2: 'ROBOTICS · CONTROLS · AUTONOMY',
+        h1a: 'Robotics engineer working where ', h1b: 'control meets autonomy.',
+        abstract: 'I build the layers that make robots move reliably: multi-motor control of a cable-driven snake robot over CAN-FD, ROS 2 navigation with sensor fusion and SLAM, and PX4-based UAV planning and tracking. M.S. student in Electrical Engineering at Columbia, graduating December 2027.',
+        ctaEmail: 'Email me', emailTitle: 'Get in touch', emailHint: 'Copy my email address:', emailOpenApp: 'Or open in your mail app', copy: 'Copy', copied: 'Copied ✓', ctaResume: 'Résumé', resumeMenuTitle: 'DOWNLOAD RÉSUMÉ (PDF)',
+        photoAlt: 'Portrait of Xiaotian Chen in graduation gown',
+        fig0cap: 'Xiaotian Chen · 陈晓天 — New York',
+        expTitle: 'Internship',
+        expCompany: 'Ningbo Ausstattung Machinery Technology Co., Ltd.', expDept: 'R&D Department · Ningbo, China', expRepo: 'Code on GitHub',
+        expRole: 'Algorithm Engineer Intern — cable-driven snake inspection robot',
+        expIntro: 'Five drive motors sit in the base drive box; cables running through a chain of modular segments bend the snake body. I built the host-side control software that coordinates them.',
+        expM1: 'drive motors · CAN-FD', expM2: 'motion record & playback',
+        demoBtn: 'Watch animation', close: 'Close animation', thesisBadge: 'B.ENG. THESIS · FEATURED',
+        csiTopic: '/csi_amplitude · 3 nodes', csiTitle: 'Multi-static passive Wi-Fi sensing',
+        csiCap: 'Schematic of the testbed: the access point transmits, three Raspberry Pi nodes capture CSI under TCP-synchronized triggers from the host, and the fused model labels the activity in the sensing zone. Animation is illustrative.',
+        csiAlt: 'Animated diagram of the three-Raspberry-Pi Wi-Fi sensing setup',
+        act0: 'STANDING', act1: 'SITTING', act2: 'WALKING', act3: 'RUNNING', act4: 'JUMPING',
+        workTitle: 'Research & projects', filterAria: 'Filter projects by area',
+        skillsTitle: 'Skills',
+        contactTitle: 'Let’s talk about your robots.',
+        updated: 'Last updated Nov 2026',
+        snakeTopic: '/cable_tension · 5 motors', snakeTitle: 'Cable-driven snake inspection robot',
+        snakeR1: '5 motors → cables',
+        snakeCap: 'Schematic only: five motors in the base drive box pull cables (red) through modular segments to bend the body. Not to scale; segment count simplified.',
+        fig8Topic: '/odom · figure-8 tracking', fig8Title: 'UNNC Intelligent Robot Design Competition · 1st Prize',
+        fig8Cap: 'Figure-8 tracking task with Hall-encoder PID speed control. Readouts are measured results; the animation is a schematic.',
+        fig8alt: 'Animated figure-8 reference trajectory with a robot marker tracing it'
+      },
+      zh: {
+        navExp: '实习', navWork: '项目', navSkills: '技能', navContact: '联系',
+        langLabel: 'EN', langAria: '切换到英文',
+        status: '寻找 2027 暑期实习', eyebrow: '哥伦比亚大学 · 电气工程硕士', eyebrow2: '机器人 · 控制 · 自主导航',
+        h1a: '做机器人里', h1b: '控制与自主导航的那一层。',
+        abstract: '我关注让机器人稳定运动的底层能力：基于 CAN-FD 的绳驱动蛇形机器人多电机控制、融合多传感器与 SLAM 的 ROS 2 自主导航，以及基于 PX4 的无人机路径规划与轨迹跟踪。目前在哥伦比亚大学攻读电气工程硕士，预计 2027 年 12 月毕业。',
+        ctaEmail: '发邮件给我', emailTitle: '联系我', emailHint: '复制我的邮箱地址：', emailOpenApp: '或用邮件客户端打开', copy: '复制', copied: '已复制 ✓', ctaResume: '下载简历', resumeMenuTitle: '下载中文简历（PDF）',
+        photoAlt: '陈晓天的毕业照',
+        fig0cap: 'Xiaotian Chen · 陈晓天 — 纽约',
+        expTitle: '实习经历',
+        expCompany: '宁波奥斯塔图机械科技有限公司', expDept: '研发部 · 中国宁波', expRepo: 'GitHub 代码',
+        expRole: '算法工程师实习生 — 绳驱动蛇形巡检机器人',
+        expIntro: '5 个驱动电机集中安装在前端驱动箱内，通过贯穿模块化蛇体关节的绳索驱动蛇体弯曲。我负责协调这些电机的上位机控制软件。',
+        expM1: '驱动电机 · CAN-FD', expM2: '运动记录与回放',
+        demoBtn: '查看动画演示', close: '关闭动画', thesisBadge: '本科毕业设计 · 重点项目',
+        csiTopic: '/csi_amplitude · 3 节点', csiTitle: '多静态被动 Wi-Fi 感知系统',
+        csiCap: '实验平台示意：Wi-Fi 接入点发射信号，主机通过 TCP 同步触发三个树莓派节点采集 CSI，融合模型识别感知区域内的人体活动。动画仅作示意。',
+        csiAlt: '三节点树莓派 Wi-Fi 感知系统的示意动画',
+        act0: '站立', act1: '坐下', act2: '行走', act3: '跑步', act4: '跳跃',
+        workTitle: '科研与项目经历', filterAria: '按方向筛选项目',
+        skillsTitle: '技能',
+        contactTitle: '聊聊你们的机器人。',
+        updated: '更新于 2026 年 11 月',
+        snakeTopic: '/cable_tension · 5 电机', snakeTitle: '绳驱动蛇形巡检机器人',
+        snakeR1: '5 电机 → 绳索',
+        snakeCap: '仅为示意：前端驱动箱内 5 个电机收放绳索（红线），绳索穿过模块化蛇体关节使蛇体弯曲。非等比例，关节数量已简化。',
+        fig8Topic: '/odom · “8”字轨迹跟踪', fig8Title: '宁波诺丁汉大学智能机器人设计大赛 · 一等奖',
+        fig8Cap: '基于霍尔编码器 PID 调速的“8”字轨迹任务。读数为实测结果，动画为示意。',
+        fig8alt: '机器人沿“8”字参考轨迹运动的示意动画'
+      }
+    };
+    const t = T[lang];
+
+    const expBullets = [
+      { en: 'Built a Python control application for the five independently addressable drive motors of a cable-driven snake robot, with real-time position, velocity and torque feedback over CAN / CAN-FD.', zh: '基于 Python 开发绳驱动蛇形机器人的上位机控制程序，5 个驱动电机独立寻址，并通过 CAN/CAN-FD 实时获取位置、速度与力矩反馈。' },
+      { en: 'Implemented enable/disable, emergency stop, software limits, per-motor speed profiles, zeroing and asynchronous communication for safe multi-joint operation.', zh: '实现电机使能/失能、急停、软件限位、单电机速度配置、零位校准与异步通信，保障多关节系统安全运行。' },
+      { en: 'Built a 20 Hz motion record-and-playback pipeline: timestamped JSON trajectories, interpolation, keyframe editing, smooth pose transitions and 0.5×–2× playback.', zh: '搭建 20 Hz 运动记录与回放流程：带时间戳的 JSON 轨迹、插值、关键帧编辑、平滑姿态过渡及 0.5–2 倍速回放。' },
+      { en: 'Ran system integration and testing of the cable-driven multi-joint mechanism, analysing friction, backlash, load variation, mechanical interference and firmware compatibility.', zh: '负责绳驱多关节机构的系统集成与测试，分析摩擦、回差、负载变化、机械干涉及固件与通信兼容性问题。' }
+    ].map((b, i) => ({ n: String(i + 1).padStart(2, '0'), text: L(b) }));
+    const expTags = ['Python', 'CAN / CAN-FD', 'Cable-driven', 'Multi-motor control', 'Trajectory playback'];
+
+    const cats = {
+      all: { en: 'All', zh: '全部' },
+      robotics: { en: 'Robotics & Autonomy', zh: '机器人与自主导航' },
+      sensing: { en: 'Sensing & ML', zh: '感知与机器学习' },
+      hw: { en: 'Embedded & Power', zh: '嵌入式与电力电子' }
+    };
+    const catDot = { robotics: '#FF6A3D', sensing: '#1E40D8', hw: '#6B7380' };
+
+    const P = [
+      { key: 'csi', cat: 'sensing', demo: 'csi', featured: true, date: '08/2025 — 06/2026',
+        title: { en: 'Multi-Static Passive Wi-Fi Human Activity Recognition (CSI)', zh: '多静态被动 Wi-Fi 人体活动识别（CSI）' },
+        role: { en: 'Independent Researcher · B.Eng. thesis', zh: '毕业设计 · 独立完成' },
+        desc: { en: 'Built a three-node sensing platform on Raspberry Pi 4B with Nexmon CSI and TCP-based synchronization, an end-to-end preprocessing and dataset pipeline, and PyTorch models comparing single-, dual- and three-node fusion. Designed weighted decision-level fusion and studied cross-scenario domain shift.', zh: '基于 Raspberry Pi 4B、Nexmon CSI 与 TCP 同步搭建三节点被动感知平台，构建端到端预处理与数据集流程，用 PyTorch 对比单/双/三节点融合；设计加权决策级融合，并分析跨场景域偏移对泛化的影响。' },
+        metrics: [ { v: '3 nodes', l: { en: 'synchronized CSI capture', zh: '同步 CSI 采集' } }, { v: '5', l: { en: 'activities: stand, sit, walk, run, jump', zh: '类活动：站、坐、走、跑、跳' } }, { v: '1·2·3', l: { en: 'node-fusion configurations', zh: '节点融合方案对比' } } ],
+        tags: ['Raspberry Pi', 'Nexmon CSI', 'PyTorch', 'Sensor fusion'] },
+      { key: 'nav', cat: 'robotics', date: '07/2024 — 09/2024',
+        title: { en: 'Indoor Inspection Robot — Autonomous Navigation', zh: '室内巡检机器人自主导航系统' },
+        role: { en: 'Researcher', zh: '项目研究员' },
+        desc: { en: 'Designed and deployed a ROS 2 navigation stack fusing LiDAR, IMU and wheel odometry with SLAM; added obstacle detection and avoidance on 10 Hz LiDAR scans and a Python node monitoring sensor health and battery state.', zh: '设计并部署基于 ROS 2 的自主导航系统，融合激光雷达、IMU 与轮速计并实现 SLAM；基于 10 Hz 激光雷达开发避障功能，并用 Python 编写传感器健康与电量监控节点。' },
+        metrics: [ { v: '0.05 m', l: { en: 'localization error (from 0.30 m)', zh: '定位误差（原 0.30 m）' } }, { v: '<0.5 s', l: { en: 'obstacle reaction', zh: '避障响应' } }, { v: '4 h', l: { en: 'collision-free run', zh: '连续无碰撞运行' } } ],
+        tags: ['ROS 2', 'SLAM', 'LiDAR / IMU fusion', 'Python'] },
+      { key: 'uav', cat: 'robotics', date: '05/2024 — 07/2024',
+        title: { en: 'UAV Autonomous Target Search & Navigation', zh: '无人机自主目标搜索与导航系统' },
+        role: { en: 'Research Assistant', zh: '科研助理' },
+        desc: { en: 'Set up Ubuntu 22.04 + ROS 2 Humble + PX4, then iterated planners and controllers — A* + PID for square paths, RRT* + MPC for circular flight — and integrated visual SLAM, YOLOv8 and EKF multi-sensor fusion for target search in simulation and real flight.', zh: '搭建 Ubuntu 22.04 + ROS 2 Humble + PX4 环境，迭代路径规划与控制器：方形轨迹采用 A* + PID，圆形飞行采用 RRT* + MPC；集成视觉 SLAM、YOLOv8 与 EKF 多传感器融合，在仿真和真实环境中实现自主目标搜索。' },
+        metrics: [ { v: '±0.2 m', l: { en: 'square-path error', zh: '方形轨迹误差' } }, { v: '±0.1 m', l: { en: 'circular-path error', zh: '圆形轨迹误差' } }, { v: '<5%', l: { en: 'speed fluctuation', zh: '速度波动' } } ],
+        tags: ['PX4', 'ROS 2', 'MPC', 'RRT*', 'EKF', 'YOLOv8'] },
+      { key: 'robocomp', cat: 'robotics', date: '10/2023 — 01/2024', demo: 'fig8',
+        title: { en: 'UNNC Intelligent Robot Design Competition — 1st Prize', zh: '宁波诺丁汉大学智能机器人设计大赛 · 一等奖' },
+        role: { en: 'Project Leader', zh: '项目负责人' },
+        desc: { en: 'Led an interdisciplinary team through design, assembly and Arduino programming. Added Hall-encoder PID closed-loop wheel-speed control, tuned with Ziegler–Nichols, and optimized four-wheel speed ratios for a continuous figure-8 run.', zh: '带领跨学科团队完成方案设计、装配与 Arduino 编程；引入霍尔编码器 PID 闭环轮速控制，用 Ziegler–Nichols 整定并优化四轮速比，实现连续“8”字行驶。' },
+        metrics: [ { v: '>98%', l: { en: 'motion symmetry', zh: '运动对称性' } }, { v: '±2 cm', l: { en: 'deviation over 5 min', zh: '5 分钟轨迹偏差' } }, { v: '±3%', l: { en: 'speed fluctuation', zh: '速度波动' } } ],
+        tags: ['Arduino', 'PID', 'Hall encoders', 'PWM'] },
+      { key: 'mab', cat: 'hw', date: '06/2025 — 08/2025',
+        title: { en: 'Modulation & Control for Multi-Active-Bridge Converters', zh: '多有源桥（MAB）变换器的先进调制与控制' },
+        role: { en: 'Researcher', zh: '项目研究员' },
+        desc: { en: 'Implemented dead-time optimization, DC-AC modulation and decoupled control, with equivalent modeling of multi-winding transformers; simulated in PLECS, Simulink and LTspice, then helped bring up a working hardware prototype.', zh: '实现死区时间优化、DC-AC 调制与去耦控制，并对多绕组变压器等效建模；在 PLECS、Simulink、LTspice 中仿真，参与硬件焊接调试并完成样机集成。' },
+        metrics: [], tags: ['PLECS', 'MATLAB / Simulink', 'LTspice', 'Control design'] },
+      { key: 'radar', cat: 'hw', date: '09/2024 — 01/2025',
+        title: { en: 'Doppler Radar System', zh: '多普勒雷达系统设计与实现' },
+        role: { en: 'Project Leader', zh: '项目组长' },
+        desc: { en: 'Designed the band-pass filter for echo extraction, ran FFT on an STM32L476RG, and built a CPLD-driven LCD linked to the MCU over RS-485 and UART.', zh: '设计带通滤波器提取雷达回波，在 STM32L476RG 上实现 FFT，并基于 CPLD 驱动液晶显示，通过 RS-485 与 UART 与 MCU 通信。' },
+        metrics: [], tags: ['STM32', 'FFT', 'CPLD', 'RS-485 / UART'] },
+      { key: 'smps', cat: 'hw', date: '09/2023 — 05/2024',
+        title: { en: 'Switch-Mode Power Supply', zh: '开关模式电源（SMPS）设计与搭建' },
+        role: { en: 'Project Leader', zh: '项目组长' },
+        desc: { en: 'Designed a closed-loop forward converter in KiCad with PWM-driven MOSFETs, holding a stable 10 V DC output from a 35 V unregulated AC supply under varying loads.', zh: '使用 KiCad 设计闭环正激变换器，PWM 驱动 MOSFET，在负载变化下由 35 V 非稳压交流输入获得稳定 10 V 直流输出。' },
+        metrics: [ { v: '35→10 V', l: { en: 'regulated output', zh: '稳压输出' } } ], tags: ['KiCad', 'Power electronics', 'PWM'] }
+    ];
+
+    const openDemo = (d) => () => this.setState({ demo: d });
+    const filter = this.state.filter;
+    const projects = P.map((p, i) => ({ p, i })).filter(({ p }) => filter === 'all' || p.cat === filter).map(({ p, i }) => ({
+      id: 'P.' + String(i + 1).padStart(2, '0'),
+      catLabel: L(cats[p.cat]).toUpperCase(),
+      dot: catDot[p.cat],
+      date: p.date, title: L(p.title), role: L(p.role), desc: L(p.desc),
+      hasMetrics: p.metrics.length > 0,
+      metrics: p.metrics.map((m) => ({ v: m.v, l: L(m.l) })),
+      tags: p.tags,
+      featured: !!p.featured,
+      titleSize: p.featured ? '32px' : '24px',
+      cardStyle: 'display: flex; flex-direction: column; gap: 16px; padding: ' + (p.featured ? '40px' : '32px') + '; border-radius: 16px; background: ' + (p.featured ? 'linear-gradient(#10151C, #10151C) padding-box, linear-gradient(135deg, #FF6A3D, #2A3340 40%, #2A3340 70%, #7E9BFF) border-box; border: 1px solid transparent' : '#10151C; border: 1px solid #2A3340') + (p.featured ? '; grid-column: 1 / -1' : ''),
+      hasDemo: !!p.demo,
+      openDemo: openDemo(p.demo || null)
+    }));
+
+    const chipBase = 'min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 14px; font-family: inherit; cursor: pointer; ';
+    const chips = Object.keys(cats).map((k) => {
+      const on = filter === k;
+      const count = k === 'all' ? P.length : P.filter((p) => p.cat === k).length;
+      return {
+        label: L(cats[k]) + ' · ' + count,
+        pressed: on ? 'true' : 'false',
+        style: chipBase + (on ? 'background: #FF6A3D; color: #0B0F14; border: 1px solid #FF6A3D' : 'background: transparent; color: #E9EBEE; border: 1px solid #3A4452'),
+        pick: () => this.setState({ filter: k })
+      };
+    });
+
+    const skillsRaw = [
+      { head: { en: 'LANGUAGES', zh: '编程语言' }, body: 'Python, C++, C, MATLAB' },
+      { head: { en: 'ROBOTICS & EMBEDDED', zh: '机器人与嵌入式' }, body: 'ROS 2, PX4, Gazebo, STM32, Arduino, CAN / CAN-FD, UART, I²C' },
+      { head: { en: 'CONTROL & ESTIMATION', zh: '控制与估计' }, body: { en: 'PID, MPC, EKF sensor fusion, SLAM, A* / RRT* planning', zh: 'PID、MPC、EKF 多传感器融合、SLAM、A* / RRT* 路径规划' } },
+      { head: { en: 'TOOLS', zh: '工具' }, body: 'Linux, PyTorch, MATLAB / Simulink, PLECS, LTspice, KiCad, SolidWorks' },
+      { head: { en: 'LANGUAGE', zh: '语言能力' }, body: { en: 'English — IELTS 7.0 (Listening 8.5, Reading 8.0); Mandarin — native', zh: '英语：雅思 7.0（听力 8.5，阅读 8.0）；中文：母语' } },
+      { head: { en: 'AWARD', zh: '奖项' }, body: { en: '1st Prize, UNNC Intelligent Robot Design Competition (2024)', zh: '2024 年宁波诺丁汉大学智能机器人设计大赛一等奖' } }
+    ];
+    const skills = skillsRaw.map((s, i) => ({
+      head: L(s.head), body: L(s.body),
+      rowStyle: 'display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; padding: 20px 0;' + (i < skillsRaw.length - 1 ? ' border-bottom: 1px dashed #2A3340' : '')
+    }));
+
+    const edu = [
+      { date: '09/2026 — 12/2027', school: { en: 'Columbia University', zh: '哥伦比亚大学' }, degree: { en: 'M.S. in Electrical Engineering (expected Dec 2027)', zh: '电气工程硕士（预计 2027 年 12 月毕业）' }, note: { en: 'New York, NY', zh: '美国纽约' } },
+      { date: '09/2022 — 07/2026', school: { en: 'University of Nottingham Ningbo China', zh: '宁波诺丁汉大学' }, degree: { en: 'B.Eng. in Electrical and Electronic Engineering', zh: '电气工程及其自动化 工学学士' }, note: { en: 'GPA 3.5 / 4.0 · Upper Second-Class Honours (2:1)', zh: 'GPA 3.5 / 4.0 · 英国二等一荣誉学位（2:1）' } }
+    ].map((e) => ({ date: e.date, school: L(e.school), degree: L(e.degree), note: L(e.note) }));
+
+    const d = this.state.demo;
+    const demo = {
+      isSnake: d === 'snake', isFig8: d === 'fig8', isCsi: d === 'csi',
+      topic: d === 'fig8' ? t.fig8Topic : d === 'csi' ? t.csiTopic : t.snakeTopic,
+      title: d === 'fig8' ? t.fig8Title : d === 'csi' ? t.csiTitle : t.snakeTitle,
+      caption: d === 'fig8' ? t.fig8Cap : d === 'csi' ? t.csiCap : t.snakeCap
+    };
+
+    const abs = (path) => { try { return new URL(path, window.location.href).href; } catch (e) { return path; } };
+    const RES = {
+      en: [
+        { url: abs('resumes/Xiaotian_Chen_Resume_Robotics.pdf'), file: 'Xiaotian_Chen_Resume_Robotics.pdf', label: 'Robotics résumé', meta: '1 page · robotics & controls focus' },
+        { url: abs('resumes/Xiaotian_Chen_Resume_Full.pdf'), file: 'Xiaotian_Chen_Resume_Full.pdf', label: 'Full résumé', meta: '2 pages · all research & projects' }
+      ],
+      zh: [
+        { url: abs('resumes/Xiaotian_Chen_Resume_CN_Robotics.pdf'), file: '陈晓天_简历_机器人方向.pdf', label: '机器人方向简历', meta: '1 页 · 聚焦机器人与控制' },
+        { url: abs('resumes/Xiaotian_Chen_Resume_CN_Full.pdf'), file: '陈晓天_简历_完整版.pdf', label: '完整版简历', meta: '2 页 · 全部科研与项目经历' }
+      ]
+    };
+
+    const copyEmail = () => {
+      const addr = 'xc2907@columbia.edu';
+      const done = () => this.setState({ copied: true });
+      const fallback = () => {
+        const el = document.getElementById('xc-email-input');
+        if (el) { el.focus(); el.select(); try { if (document.execCommand('copy')) done(); } catch (e) {} }
+      };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr).then(done, fallback);
+        else fallback();
+      } catch (e) { fallback(); }
+    };
+
+    return {
+      emailOpen: !!this.state.emailOpen,
+      openEmail: () => this.setState({ emailOpen: true, copied: false, resumeOpen: false }),
+      closeEmail: () => this.setState({ emailOpen: false }),
+      copyEmail,
+      copyLabel: this.state.copied ? t.copied : t.copy,
+      resumes: RES[lang],
+      resumeOpen: !!this.state.resumeOpen,
+      resumeExpanded: this.state.resumeOpen ? 'true' : 'false',
+      toggleResume: () => this.setState({ resumeOpen: !this.state.resumeOpen }),
+      closeResume: () => this.setState({ resumeOpen: false }),
+      t, accent, accentOnDark, htmlLang: lang === 'zh' ? 'zh-CN' : 'en',
+      toggleLang: () => this.setState({ lang: lang === 'en' ? 'zh' : 'en', resumeOpen: false }),
+      openSnake: openDemo('snake'),
+      closeDemo: () => this.setState({ demo: null }),
+      stop: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
+      demoOpen: !!d, demo,
+      expBullets, expTags, projects, chips, skills, edu
+    };
+  }
+}
+window.__mountPage(Component, {});
+</script>
+</body>
+</html>
